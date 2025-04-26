@@ -16,10 +16,9 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/primary_dark"
-        app:title="MediTrack"
+        app:title="AssistAI"
         app:titleTextColor="@color/white"
         android:elevation="4dp"/>
-
 
     <!-- Main Content Area -->
     <ScrollView
@@ -54,7 +53,7 @@
                 android:textStyle="bold"
                 android:layout_marginBottom="16dp"/>
 
-            <!-- BMI Status Card (Replacing Medication Overview Card) -->
+            <!-- Mood & Progress Card -->
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -74,7 +73,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Your BMI Status"
+                        android:text="Your Progress Today"
                         android:textSize="18sp"
                         android:textStyle="bold"
                         android:textColor="#000000"
@@ -87,38 +86,198 @@
                         android:gravity="center_vertical">
 
                         <com.google.android.material.progressindicator.CircularProgressIndicator
-                            android:id="@+id/bmi_indicator"
+                            android:id="@+id/task_progress_indicator"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:progress="50"
+                            android:progress="65"
                             app:indicatorSize="48dp"
                             app:trackThickness="6dp"
                             app:indicatorColor="@color/primary_color"
                             app:trackColor="#E0E0E0"/>
 
                         <LinearLayout
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
-                            android:layout_marginStart="16dp">
+                            android:layout_marginStart="16dp"
+                            android:layout_weight="1">
 
                             <TextView
-                                android:id="@+id/bmi_value"
+                                android:id="@+id/task_status"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="BMI: Not calculated"
+                                android:text="7/10 tasks completed"
                                 android:textSize="16sp"
                                 android:textColor="#000000"/>
 
                             <TextView
-                                android:id="@+id/bmi_status"
+                                android:id="@+id/current_mood"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Tap BMI Calculator to check your BMI"
+                                android:text="Your mood: Productive"
                                 android:textSize="14sp"
                                 android:textColor="#616161"/>
                         </LinearLayout>
+
+
                     </LinearLayout>
+
+                    <!-- Daily Affirmation Section -->
+                    <TextView
+                        android:id="@+id/daily_affirmation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Focus on progress, not perfection."
+                        android:textStyle="italic"
+                        android:textColor="@color/primary_color"
+                        android:textSize="14sp"
+                        android:textAlignment="center"
+                        android:layout_marginTop="12dp"
+                        android:background="#F5F5F5"
+                        android:padding="8dp"
+                        android:elevation="1dp"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Today's Schedule -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Today's Schedule"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary"
+                android:layout_marginBottom="8dp"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="#FFFFFF">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+
+                    <!-- Task Item 1 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="8dp"
+                        android:background="#F8F8F8"
+                        android:layout_marginBottom="8dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="9:00"
+                            android:textColor="@color/primary_color"
+                            android:textStyle="bold"
+                            android:layout_marginEnd="12dp"/>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Group Project Meeting"
+                            android:textColor="@color/text_primary"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Academics"
+                            android:textSize="12sp"
+                            android:background="@color/primary_light"
+                            android:textColor="@color/primary_color"
+                            android:paddingHorizontal="8dp"
+                            android:paddingVertical="2dp"/>
+                    </LinearLayout>
+
+                    <!-- Task Item 2 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="8dp"
+                        android:background="#F8F8F8"
+                        android:layout_marginBottom="8dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="14:00"
+                            android:textColor="@color/primary_color"
+                            android:textStyle="bold"
+                            android:layout_marginEnd="12dp"/>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Submit Mobile App Assignment"
+                            android:textColor="@color/text_primary"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Deadline"
+                            android:textSize="12sp"
+                            android:background="#FFEBEE"
+                            android:textColor="#F44336"
+                            android:paddingHorizontal="8dp"
+                            android:paddingVertical="2dp"/>
+                    </LinearLayout>
+
+                    <!-- Task Item 3 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="8dp"
+                        android:background="#F8F8F8">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="17:30"
+                            android:textColor="@color/primary_color"
+                            android:textStyle="bold"
+                            android:layout_marginEnd="12dp"/>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Society Meeting"
+                            android:textColor="@color/text_primary"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Social"
+                            android:textSize="12sp"
+                            android:background="#E1F5FE"
+                            android:textColor="#0288D1"
+                            android:paddingHorizontal="8dp"
+                            android:paddingVertical="2dp"/>
+                    </LinearLayout>
+
+                    <!-- View All Button -->
+                    <TextView
+                        android:id="@+id/view_all_tasks"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="View Full Calendar →"
+                        android:textColor="@color/primary_color"
+                        android:textStyle="bold"
+                        android:layout_gravity="end"
+                        android:layout_marginTop="12dp"
+                        android:padding="4dp"/>
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
@@ -126,22 +285,22 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Features"
-                android:textSize="20sp"
+                android:text="Quick Actions"
+                android:textSize="18sp"
                 android:textStyle="bold"
                 android:textColor="@color/text_primary"
                 android:layout_marginBottom="12dp"/>
 
-            <!-- First row -->
+            <!-- First row of features -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginBottom="12dp">
 
-                <!-- Track Medications Feature -->
+                <!-- Natural Language Task Feature -->
                 <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/card_track_medications"
+                    android:id="@+id/card_add_task"
                     android:layout_width="0dp"
                     android:layout_height="100dp"
                     android:layout_weight="1"
@@ -162,14 +321,14 @@
                         <ImageView
                             android:layout_width="28dp"
                             android:layout_height="28dp"
-                            android:src="@drawable/ic_pill"
+                            android:src="@drawable/ic_add"
                             android:layout_marginBottom="8dp"
                             app:tint="@color/primary_color" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Track Medications"
+                            android:text="Add Task"
                             android:textSize="14sp"
                             android:textColor="@color/text_primary"
                             android:textStyle="bold"
@@ -177,9 +336,132 @@
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 
-                <!-- BMI Calculator Feature -->
+                <!-- Voice Input Feature -->
                 <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/card_bmi"
+                    android:id="@+id/card_voice_input"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginEnd="3dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="2dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardBackgroundColor="@color/primary_light">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="12dp"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:src="@drawable/ic_voice"
+                            android:layout_marginBottom="8dp"
+                            app:tint="@color/primary_color" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Voice Input"
+                            android:textSize="14sp"
+                            android:textColor="@color/text_primary"
+                            android:textStyle="bold"
+                            android:textAlignment="center"/>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Scan Documents Feature -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_scan"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="6dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="2dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardBackgroundColor="@color/primary_light">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="12dp"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:src="@drawable/ic_task"
+                            android:layout_marginBottom="8dp"
+                            app:tint="@color/primary_color" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Scan Notes"
+                            android:textSize="14sp"
+                            android:textColor="@color/text_primary"
+                            android:textStyle="bold"
+                            android:textAlignment="center"/>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
+            <!-- Second row of features -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="12dp">
+
+                <!-- Mood Journal Feature -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_mood_journal"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="6dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="2dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardBackgroundColor="@color/primary_light">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="12dp"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:src="@drawable/ic_mood"
+                            android:layout_marginBottom="8dp"
+                            app:tint="@color/primary_color" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Mood Journal"
+                            android:textSize="14sp"
+                            android:textColor="@color/text_primary"
+                            android:textStyle="bold"
+                            android:textAlignment="center"/>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Summarize Notes Feature -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_summarize"
                     android:layout_width="0dp"
                     android:layout_height="100dp"
                     android:layout_weight="1"
@@ -208,7 +490,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="BMI Calculator"
+                            android:text="Summarize Notes"
                             android:textSize="14sp"
                             android:textColor="@color/text_primary"
                             android:textStyle="bold"
@@ -216,58 +498,9 @@
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 
-            </LinearLayout>
-
-            <!-- Second row - -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginBottom="12dp">
-
-                <!-- Nutrition Info Feature -->
+                <!-- Progress Tracker Feature -->
                 <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/card_nutrition"
-                    android:layout_width="0dp"
-                    android:layout_height="100dp"
-                    android:layout_weight="1"
-                    android:layout_marginEnd="6dp"
-                    app:cardCornerRadius="16dp"
-                    app:cardElevation="2dp"
-                    android:clickable="true"
-                    android:focusable="true"
-                    app:cardBackgroundColor="@color/primary_light">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:padding="12dp"
-                        android:gravity="center">
-
-                        <ImageView
-                            android:layout_width="28dp"
-                            android:layout_height="28dp"
-                            android:src="@drawable/ic_nutrition"
-                            android:layout_marginBottom="8dp"
-                            app:tint="@color/primary_color" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Nutrition Info"
-                            android:textSize="14sp"
-                            android:textColor="@color/text_primary"
-                            android:textStyle="bold"
-                            android:textAlignment="center"/>
-                    </LinearLayout>
-                </com.google.android.material.card.MaterialCardView>
-
-
-
-                <!-- Pharmacies Feature -->
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/card_pharmacies"
+                    android:id="@+id/card_progress"
                     android:layout_width="0dp"
                     android:layout_height="100dp"
                     android:layout_weight="1"
@@ -288,14 +521,14 @@
                         <ImageView
                             android:layout_width="28dp"
                             android:layout_height="28dp"
-                            android:src="@drawable/ic_pharmacy"
+                            android:src="@drawable/ic_check"
                             android:layout_marginBottom="8dp"
                             app:tint="@color/primary_color" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Pharmacies"
+                            android:text="Progress Tracker"
                             android:textSize="14sp"
                             android:textColor="@color/text_primary"
                             android:textStyle="bold"
@@ -304,9 +537,9 @@
                 </com.google.android.material.card.MaterialCardView>
             </LinearLayout>
 
-            <!-- Pills Info Feature -->
+            <!-- Goal Breakdown Feature -->
             <com.google.android.material.card.MaterialCardView
-                android:id="@+id/card_pill_info"
+                android:id="@+id/card_goal_breakdown"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
@@ -334,7 +567,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Get Medicine Info"
+                        android:text="Break Down Goals Into Tasks"
                         android:textSize="16sp"
                         android:textColor="@color/white"
                         android:textStyle="bold"/>
@@ -344,6 +577,91 @@
                         android:layout_height="24dp"
                         android:src="@drawable/ic_arrow_right"
                         app:tint="@color/white"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Notification Center -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Notification Center"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary"
+                android:layout_marginBottom="8dp"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="#FFFFFF">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+
+                    <!-- Notification Item 1 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="8dp"
+                        android:background="#FAFAFA"
+                        android:layout_marginBottom="8dp">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/ic_task"
+                            android:layout_marginEnd="12dp"
+                            app:tint="#F44336"/>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Assignment deadline in 3 hours!"
+                            android:textColor="@color/text_primary"/>
+                    </LinearLayout>
+
+                    <!-- Notification Item 2 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="8dp"
+                        android:background="#FAFAFA">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/ic_check"
+                            android:layout_marginEnd="12dp"
+                            app:tint="#4CAF50"/>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="You've completed 70% of today's tasks!"
+                            android:textColor="@color/text_primary"/>
+                    </LinearLayout>
+
+                    <!-- View All Button -->
+                    <TextView
+                        android:id="@+id/view_all_notifications"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="View All Notifications"
+                        android:textColor="@color/primary_color"
+                        android:textStyle="bold"
+                        android:layout_gravity="end"
+                        android:layout_marginTop="12dp"
+                        android:padding="4dp"/>
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
         </LinearLayout>
